@@ -1,0 +1,525 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "2.0",
+    "title": "Salesforce Rest API"
+  },
+  "basePath": "/services/data/v43.0/sobjects",
+  "tags": [
+    {
+      "name": "Data Subject"
+    }
+  ],
+  "paths": {
+    "/individual": {
+      "get": {
+        "tags": [
+          "Data Subject"
+        ],
+        "summary": "Finds Data Subject Data",
+        "description": "Gets information about a data subject. use '/{externalIDfield}/ExternalId' to search by external id, or use the SFDC ID",
+        "operationId": "Individual",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Individual"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/contact": {
+      "get": {
+        "tags": [
+          "Data Subject"
+        ],
+        "summary": "Finds Data Subject Data",
+        "description": "Gets information about a data subject. use '/{externalIDfield}/ExternalId' to search by external id, or use the SFDC ID",
+        "operationId": "Contact",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Contact"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/lead": {
+      "get": {
+        "tags": [
+          "Data Subject"
+        ],
+        "summary": "Finds Data Subject Data",
+        "description": "Gets information about a data subject. use '/{externalIDfield}/ExternalId' to search by external id, or use the SFDC ID",
+        "operationId": "lead",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Lead"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Individual": {
+      "type": "object",
+      "properties": {
+        "Id": {
+          "type": "string",
+          "example": "0PKW00000008OgMABC"
+        },
+        "OwnerId": {
+          "type": "string",
+          "example": "005W0000003Ob1bABC"
+        },
+        "IsDeleted": {
+          "type": "boolean"
+        },
+        "LastName": {
+          "type": "string",
+          "example": "Doe"
+        },
+        "FirstName": {
+          "type": "string",
+          "example": "John"
+        },
+        "Salutation": {
+          "type": "string",
+          "example": "Dr"
+        },
+        "Name": {
+          "type": "string",
+          "example": "Dr John Doe"
+        },
+        "HasOptedOutTracking": {
+          "type": "boolean"
+        },
+        "HasOptedOutProfiling": {
+          "type": "boolean"
+        },
+        "HasOptedOutProcessing": {
+          "type": "boolean"
+        },
+        "HasOptedOutSolicit": {
+          "type": "boolean"
+        },
+        "ShouldForget": {
+          "type": "boolean"
+        },
+        "SendIndividualData": {
+          "type": "boolean"
+        },
+        "CanStorePiiElsewhere": {
+          "type": "boolean"
+        },
+        "HasOptedOutGeoTracking": {
+          "type": "boolean"
+        },
+        "BirthDate": {
+          "type": "string",
+          "example": "2018-12-31T21:31:05.000+0000"
+        }
+      },
+      "title": "Individual"
+    },
+    "Contact": {
+      "type": "object",
+      "properties": {
+        "Id": {
+          "type": "string",
+          "example": "003W000000rZ0oABC"
+        },
+        "IsDeleted": {
+          "type": "boolean"
+        },
+        "MasterRecordId": {
+          "type": "string"
+        },
+        "AccountId": {
+          "type": "string",
+          "example": "001W000000mLF9SABC"
+        },
+        "LastName": {
+          "type": "string",
+          "example": "Doe"
+        },
+        "FirstName": {
+          "type": "string",
+          "example": "John"
+        },
+        "Salutation": {
+          "type": "string",
+          "example": "Dr"
+        },
+        "Name": {
+          "type": "string",
+          "example": "Dr John Doe"
+        },
+        "MailingStreet": {
+          "type": "string",
+          "example": "123 Peachtree Street"
+        },
+        "MailingCity": {
+          "type": "string",
+          "example": "Atlanta"
+        },
+        "MailingState": {
+          "type": "string",
+          "example": "GA"
+        },
+        "MailingPostalCode": {
+          "type": "string",
+          "example": "30309"
+        },
+        "MailingCountry": {
+          "type": "string",
+          "example": "USA"
+        },
+        "MailingLatitude": {
+          "type": "string"
+        },
+        "MailingLongitude": {
+          "type": "string"
+        },
+        "MailingGeocodeAccuracy": {
+          "type": "string"
+        },
+        "MailingAddress": {
+          "type": "string"
+        },
+        "Phone": {
+          "type": "string",
+          "example": "(404)-867-5309"
+        },
+        "Fax": {
+          "type": "string",
+          "example": "(404)-867-5309"
+        },
+        "MobilePhone": {
+          "type": "string",
+          "example": "(404)-867-5309"
+        },
+        "ReportsToId": {
+          "type": "string",
+          "example": "005W0000003Ob1bABC"
+        },
+        "Email": {
+          "type": "string",
+          "example": "jdoe@zentoso.com"
+        },
+        "Title": {
+          "type": "string",
+          "example": "Director"
+        },
+        "Department": {
+          "type": "string",
+          "example": "Sales"
+        },
+        "LeadSource": {
+          "type": "string",
+          "example": "Web"
+        },
+        "CurrencyIsoCode": {
+          "type": "string",
+          "example": "USD"
+        },
+        "OwnerId": {
+          "type": "string",
+          "example": "005W0000003Ob1bABC"
+        },
+        "HasOptedOutOfEmail": {
+          "type": "boolean"
+        },
+        "CreatedDate": {
+          "type": "string",
+          "example": "2018-12-31T21:31:05.000+0000"
+        },
+        "CreatedById": {
+          "type": "string"
+        },
+        "LastModifiedDate": {
+          "type": "string",
+          "example": "2018-12-31T21:31:05.000+0000"
+        },
+        "LastModifiedById": {
+          "type": "string"
+        },
+        "SystemModstamp": {
+          "type": "string"
+        },
+        "LastActivityDate": {
+          "type": "string",
+          "example": "2018-12-31T21:31:05.000+0000"
+        },
+        "LastCURequestDate": {
+          "type": "string",
+          "example": "2018-12-31T21:31:05.000+0000"
+        },
+        "LastCUUpdateDate": {
+          "type": "string",
+          "example": "2018-12-31T21:31:05.000+0000"
+        },
+        "LastViewedDate": {
+          "type": "string",
+          "example": "2018-12-31T21:31:05.000+0000"
+        },
+        "LastReferencedDate": {
+          "type": "string",
+          "example": "2018-12-31T21:31:05.000+0000"
+        },
+        "EmailBouncedReason": {
+          "type": "string"
+        },
+        "EmailBouncedDate": {
+          "type": "string",
+          "example": "2018-12-31T21:31:05.000+0000"
+        },
+        "IsEmailBounced": {
+          "type": "boolean"
+        },
+        "PhotoUrl": {
+          "type": "string",
+          "example": "/services/images/photo/003W000000rZ0oKABC"
+        },
+        "IndividualId": {
+          "type": "string",
+          "example": "0PKW00000008OgMABC"
+        }
+      },
+      "title": "Contact"
+    },
+    "Lead": {
+      "type": "object",
+      "properties": {
+        "Id": {
+          "type": "string",
+          "example": "00QW0000007AfBvABC"
+        },
+        "IsDeleted": {
+          "type": "boolean"
+        },
+        "MasterRecordId": {
+          "type": "string"
+        },
+        "LastName": {
+          "type": "string",
+          "example": "Doe"
+        },
+        "FirstName": {
+          "type": "string",
+          "example": "John"
+        },
+        "Salutation": {
+          "type": "string",
+          "example": "Dr"
+        },
+        "Name": {
+          "type": "string",
+          "example": "Dr John Doe"
+        },
+        "Title": {
+          "type": "string",
+          "example": "Director"
+        },
+        "Company": {
+          "type": "string",
+          "example": "Acme Co"
+        },
+        "Street": {
+          "type": "string",
+          "example": "123 Peachtree Street"
+        },
+        "City": {
+          "type": "string",
+          "example": "Atlanta"
+        },
+        "State": {
+          "type": "string",
+          "example": "GA"
+        },
+        "PostalCode": {
+          "type": "string",
+          "example": "30309"
+        },
+        "Country": {
+          "type": "string",
+          "example": "USA"
+        },
+        "Latitude": {
+          "type": "string"
+        },
+        "Longitude": {
+          "type": "string"
+        },
+        "GeocodeAccuracy": {
+          "type": "string"
+        },
+        "Address": {
+          "type": "string"
+        },
+        "Phone": {
+          "type": "string",
+          "example": "(404)-867-5309"
+        },
+        "Fax": {
+          "type": "string",
+          "example": "(404)-867-5309"
+        },
+        "Email": {
+          "type": "string",
+          "example": "jdoe@zentoso.com"
+        },
+        "website": {
+          "type": "string",
+          "example": "https://acme.co"
+        },
+        "LeadSource": {
+          "type": "string",
+          "example": "Web"
+        },
+        "Status": {
+          "type": "string",
+          "example": "New"
+        },
+        "Industry": {
+          "type": "string",
+          "example": "Retail"
+        },
+        "Rating": {
+          "type": "string"
+        },
+        "CurrencyIsoCode": {
+          "type": "string",
+          "example": "USD"
+        },
+        "AnnualRevenue": {
+          "type": "string",
+          "example": "5-10M"
+        },
+        "NumberOfEmployees": {
+          "type": "string",
+          "example": "5-10M"
+        },
+        "OwnerId": {
+          "type": "string",
+          "example": "005W0000003Ob1bABC"
+        },
+        "HasOptedOutOfEmail": {
+          "type": "boolean"
+        },
+        "IsConverted": {
+          "type": "boolean"
+        },
+        "ConvertedDate": {
+          "type": "string",
+          "example": "2018-12-31T21:31:05.000+0000"
+        },
+        "ConvertedAccountId": {
+          "type": "string",
+          "example": "001W000000mLF9SABC"
+        },
+        "ConvertedContactId": {
+          "type": "string",
+          "example": "001W000000mLF9SABC"
+        },
+        "ConvertedOpportunityId": {
+          "type": "string",
+          "example": "001W000000mLF9SABC"
+        },
+        "IsUnreadByOwner": {
+          "type": "boolean"
+        },
+        "CreatedDate": {
+          "type": "string",
+          "example": "2018-12-31T21:31:05.000+0000"
+        },
+        "CreatedById": {
+          "type": "string"
+        },
+        "LastModifiedDate": {
+          "type": "string",
+          "example": "2018-12-31T21:31:05.000+0000"
+        },
+        "LastModifiedById": {
+          "type": "string"
+        },
+        "SystemModstamp": {
+          "type": "string"
+        },
+        "LastActivityDate": {
+          "type": "string",
+          "example": "2018-12-31T21:31:05.000+0000"
+        },
+        "LastViewedDate": {
+          "type": "string",
+          "example": "2018-12-31T21:31:05.000+0000"
+        },
+        "LastReferencedDate": {
+          "type": "string",
+          "example": "2018-12-31T21:31:05.000+0000"
+        },
+        "EmailBouncedReason": {
+          "type": "string"
+        },
+        "EmailBouncedDate": {
+          "type": "string",
+          "example": "2018-12-31T21:31:05.000+0000"
+        },
+        "IsEmailBounced": {
+          "type": "boolean"
+        },
+        "PhotoUrl": {
+          "type": "string",
+          "example": "/services/images/photo/003W000000rZ0oKABC"
+        },
+        "IndividualId": {
+          "type": "string",
+          "example": "0PKW00000008OgMABC"
+        }
+      },
+      "title": "Lead"
+    }
+  }
+}
